@@ -13,3 +13,5 @@ Start-Sleep -Seconds 30
 
 # Stop the VM
 Stop-AzVM -ResourceGroupName $resourceGroupName -Name $vmName -Force
+
+## new line added to test sync
