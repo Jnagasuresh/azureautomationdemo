@@ -1,0 +1,198 @@
+Here is a **comprehensive beginner-to-pro-level guide** on what you should **ask, understand, and document** during your **Cypress Automation project KT (Knowledge Transfer)** — especially when pipelines and servers are involved.
+
+---
+
+## 🧠 I. CORE TOPICS TO UNDERSTAND DURING KT
+
+### 🔹 1. **Project Overview**
+
+Ask:
+
+* What is the **goal** of this automation?
+* What is the **application under test (AUT)**?
+* What types of tests are automated? (Smoke, Regression, E2E, etc.)
+* How often are tests run? (Daily? Per build?)
+
+---
+
+### 🔹 2. **Cypress Framework Structure**
+
+Ask or check:
+
+* Where is the **Cypress test code** located?
+
+  * Typical folders: `/cypress/integration/`, `/cypress/support/`
+* Are we using **TypeScript or JavaScript**?
+* What are the **naming conventions** for test files?
+* How are tests grouped? (Feature-wise, module-wise, tag-based?)
+
+✅ **Best Practice:** Keep tests modular and use Page Object Model (POM) for maintainability.
+
+---
+
+### 🔹 3. **Environment & Configuration**
+
+Ask:
+
+* How are test environments managed? (dev, QA, staging, prod)
+* Are **.env** files or `cypress.config.js` used for variables?
+* Is there **dynamic base URL switching**?
+
+✅ **Best Practice:** Never hardcode environment-specific values — use config or environment variables.
+
+---
+
+### 🔹 4. **Test Data Management**
+
+Ask:
+
+* How is test data generated or cleaned up?
+* Do we use **fixtures**, mocks, or **live data**?
+* Is there a **backend reset** mechanism before/after tests?
+
+✅ **Best Practice:** Use **fixtures** or API setup calls to ensure clean test states.
+
+---
+
+### 🔹 5. **Authentication & Authorization**
+
+Ask:
+
+* Is login handled via **UI** or **API token**?
+* Is **session caching** used to skip login in repeated tests?
+
+✅ **Best Practice:** Prefer **API-based login** with `cy.request()` for faster test setup.
+
+---
+
+### 🔹 6. **Custom Commands**
+
+Ask:
+
+* What **custom Cypress commands** are defined in `/cypress/support/commands.js`?
+* How to use them? Are they documented?
+
+✅ **Best Practice:** Abstract repetitive tasks into custom commands.
+
+---
+
+### 🔹 7. **CI/CD Integration (Pipelines)**
+
+Ask:
+
+* Which tool is used for pipelines? (GitHub Actions, GitLab, Jenkins, Azure DevOps, etc.)
+* When do tests run? (on pull request, nightly, release?)
+* Where is the pipeline YAML/config file?
+* Are artifacts like screenshots/videos uploaded?
+* Is parallelization used for speed?
+
+✅ **Best Practice:** Run smoke tests on every pull request, and full suite on nightly or release branches.
+
+---
+
+### 🔹 8. **Reporting & Results**
+
+Ask:
+
+* How are test results reported? (HTML, JUnit, Allure, Dashboard?)
+* Where are the test reports stored or emailed?
+* Are **screenshots/videos** enabled for failed tests?
+
+✅ **Best Practice:** Integrate dashboards like Cypress Dashboard or Allure for visual feedback.
+
+---
+
+### 🔹 9. **Server & Infrastructure**
+
+Ask:
+
+* Where are the tests running? Local, Docker, cloud server?
+* Are tests containerized (Docker)?
+* Is there a dedicated **test runner machine**?
+* How are browsers managed in pipeline (Chrome headless, Electron, etc.)?
+
+✅ **Best Practice:** Use Docker + Cypress base image for stable test runs across environments.
+
+---
+
+### 🔹 10. **Maintenance & Scalability**
+
+Ask:
+
+* How are flaky tests tracked and fixed?
+* Is there a backlog for test automation?
+* How to write new tests and add to CI?
+* Who reviews test code? Is there a review checklist?
+
+✅ **Best Practice:** Treat test automation code like production code — follow linting, versioning, and review practices.
+
+---
+
+## 🗂️ II. QUESTIONS TO ASK DURING KT
+
+### 🔧 Technical
+
+* How is Cypress configured? Where is `cypress.config.js` or `cypress.json`?
+* What are the key utility/helper files?
+* How is login handled?
+* How are API calls mocked, if any?
+* What are the critical test flows? (Happy path, edge cases, etc.)
+* Are there reusable components or test IDs?
+
+### 🚀 DevOps / Pipelines
+
+* What pipeline tool is used?
+* How is test failure handled in CI?
+* Are pipelines blocking merges?
+* How are tests scheduled?
+* Where are YAML/config files?
+
+### 👨‍👩‍👧 Team & Process
+
+* Who is the automation POC (Point of Contact)?
+* Is there documentation for writing new tests?
+* How are test cases reviewed?
+* How are bugs reported from automation?
+
+---
+
+## 🔒 III. BEST PRACTICES CHECKLIST ✅
+
+| Category        | Best Practice                                    |
+| --------------- | ------------------------------------------------ |
+| Structure       | Follow Page Object Model (POM)                   |
+| Configuration   | Use `cypress.config.ts` and `.env` properly      |
+| Data            | Keep fixtures clean and versioned                |
+| Commands        | Add reusable logic in `commands.ts`              |
+| Assertions      | Keep them specific and descriptive               |
+| Logging         | Use `cy.log()` for visibility                    |
+| Debugging       | Use `.debug()` and `--headed` mode               |
+| Parallelization | Split tests in pipeline to reduce execution time |
+| Reporting       | Integrate with Cypress Dashboard or Allure       |
+| Maintenance     | Track flaky tests; document test ownership       |
+
+---
+
+## 📘 What to Document for Future
+
+* Folder and file structure of the Cypress framework
+* Custom command list and usage
+* Authentication logic
+* Test execution steps (local + CI)
+* Common debugging commands
+* How to add a new test
+* How to trigger tests from pipeline
+* Screenshot/video path
+* Contact list for test failures
+
+---
+
+Would you like me to generate:
+
+* ✅ A **PDF checklist**
+* ✅ A **sample `cypress.config.ts`**
+* ✅ A **template test file with custom login**
+* ✅ A **CI pipeline YAML file**
+* ✅ A **real interview Q\&A based on this**
+
+Let me know and I’ll build it for you in your format (PDF, DOCX, CSV, etc.) with visuals and real code.
