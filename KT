@@ -196,3 +196,18 @@ Would you like me to generate:
 * ✅ A **real interview Q\&A based on this**
 
 Let me know and I’ll build it for you in your format (PDF, DOCX, CSV, etc.) with visuals and real code.
+-----------------
+
+Part 1 - Cypress Introduction, Architecture & Installation - YouTube 
+Part 2 - Cypress Folder Structure and Execution Bundling Processor 
+Part 3 - Cypress Code Intellisense in VS Code For - Built-in/Custom Commands AND Cypress.JSON 
+Part 6 - Cypress Document Commands (cy.document, cy.title and cy.viewport) And Cypress.$() 
+Part 7 - Cypress Web Element Commands 
+Part 9 - Handling Frames and IFrames with Cypress 
+Part 10 - How to handle different pop-ups and switch to a different website window with Cypress? 
+Part 14 - Handle Single, Multi-select & Customized Dropdowns in Cypress | invoke, alias, blur 
+Part 16-Cypress Mouse Events(click,rightclick,doubleclick) and more on trigger, invoke and force opt 
+Part 17 - Cypress Custom Commands (Parent, Child and Dual) - YouTube 
+Part 25-Cypress API Testing | Basic Authentication | File Upload(multipart/form-data)| Request Chain 
+Part 27 - Intercept Network Requests (Both XHR and FETCH) with Cypress 
+Part 35 - Setting up Cypress with TypeScript - Migrate existing Cypress on JavaScript to TypeScript 
