@@ -211,3 +211,180 @@ Part 17 - Cypress Custom Commands (Parent, Child and Dual) - YouTube
 Part 25-Cypress API Testing | Basic Authentication | File Upload(multipart/form-data)| Request Chain 
 Part 27 - Intercept Network Requests (Both XHR and FETCH) with Cypress 
 Part 35 - Setting up Cypress with TypeScript - Migrate existing Cypress on JavaScript to TypeScript 
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+You're in a **Knowledge Transfer (KT)** phase at your new company, and it's common to feel overwhelmed—especially when the team isn’t providing enough structured guidance. But don't worry. I’ll give you **a step-by-step survival and mastery strategy** with clear **tips, valid questions, big-picture understanding, and specific tactics** to extract knowledge even from an unhelpful team.
+
+---
+
+## 🔥 1. **Your KT Survival Mindset**
+
+You are not a passive receiver. You are:
+
+* 📡 **An investigator** (gather evidence and connections)
+* 🧱 **A builder** (reconstruct the system mentally)
+* 🧭 **A cartographer** (draw the complete map of systems, data flows, and responsibilities)
+* 📋 **A documenter** (leave behind better documentation than what you got)
+
+---
+
+## 🧠 2. **What You Need to Understand (Big Picture)**
+
+| Area                                   | Description                                                                                                |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 🔄 **End-to-End Workflow**             | What is the purpose of the entire system? Where does data come from? What happens to it? Where does it go? |
+| 📦 **Modules or Components**           | What are the main systems or microservices? E.g., ingestion, processing, reporting.                        |
+| 📅 **Daily, Weekly Jobs**              | Which pipelines or automations run daily/weekly/monthly? What happens when they fail?                      |
+| 👥 **Who owns what?**                  | Who are the key SMEs (Subject Matter Experts) for each part of the system?                                 |
+| 🔐 **Access/Permissions**              | What do you need access to? Who approves it?                                                               |
+| 🚨 **Monitoring/Alerts**               | How is the system monitored? Is there PagerDuty/XMatters/Control-M/Alerts?                                 |
+| 📄 **Documentation (or lack thereof)** | Where is current documentation stored? Wiki? SharePoint? Notion? Is it outdated?                           |
+
+---
+
+## ✅ 3. **Before Every KT Session – Prepare Like This**
+
+1. **Send a Clear Calendar Invite**
+   Title: `"KT: <Module Name> Overview"`
+   Description:
+
+   > “Please walk me through the following:
+   >
+   > * What this module/system does
+   > * Where the code/config is
+   > * Common issues
+   > * How to debug
+   > * Who to contact if I get stuck
+   > * Any best practices
+   >   Thanks!”
+
+2. **Have This KT Template Ready to Fill**
+
+   ```
+   Module/System Name:
+   Purpose:
+   Input/Output:
+   Source Code Location:
+   Data Flow Steps:
+   Common Issues:
+   Who to Contact:
+   Related Docs:
+   Last Modified:
+   ```
+
+---
+
+## ❓ 4. **Critical Questions to Ask During KT**
+
+### 🔍 For Any Module / Component:
+
+* **What is the business purpose of this module?**
+* **Where is the source code/config stored? Git repo? Path?**
+* **What are the input data sources and output targets?**
+* **What schedule does it run on (daily/hourly/manual)?**
+* **What happens if it fails? How do we know?**
+* **How do we re-run or backfill it?**
+* **What are the most common issues seen here?**
+* **Who are the current owners/SMEs of this system?**
+* **Is there any documentation available?**
+
+### 🧪 For Pipelines / Automation:
+
+* **Where is the orchestration handled (Control-M, ADF, Airflow, etc.)?**
+* **Which step is the most fragile?**
+* **How do we validate successful execution?**
+* **How are secrets and credentials handled? (KeyVault, Env variables?)**
+
+### ⚙️ For Code & Configuration:
+
+* **How do we deploy changes? (Manual/CI/CD pipeline?)**
+* **Are there any test environments? How do we test safely?**
+* **Where can I see logs (Databricks UI, Splunk, App Insights, etc.)?**
+* **What naming conventions should I follow?**
+
+---
+
+## 🧱 5. **Build a KT Tracker Document**
+
+| Date   | Topic              | Owner | Systems Covered    | Notes                 | Action Items                 |
+| ------ | ------------------ | ----- | ------------------ | --------------------- | ---------------------------- |
+| Jun 10 | Ingestion Pipeline | John  | Kafka, Spark       | \[Link to notes]      | Set up access, test pipeline |
+| Jun 11 | Reporting          | Priya | Power BI           | Missing credentials   | Request Power BI role        |
+| Jun 12 | Data Lake Zones    | Raj   | Bronze/Silver/Gold | Understand zone logic | Schedule session             |
+
+Maintain this tracker as your personal and team KT dashboard.
+
+---
+
+## 🛠️ 6. **Tactics for Passive or Poor KT Givers**
+
+* **Share a Google Doc and type in real-time** during KT — they will correct mistakes out of habit
+* **Ask "Can I share my screen and you guide me?"** — forces them to explain clearly
+* **Say "Let’s record the session for my notes"** — even if they don’t explain well, you can replay and reverse-engineer later
+* **Shadow a Run**: Ask to **sit in a meeting or monitoring session** silently just to observe real work
+* **"Can you walk me through this ticket/story from JIRA/ADO?"** — best way to learn a real example
+
+---
+
+## 🔁 7. **After KT – How to Maximize Learning**
+
+* Summarize what you learned and send it to them for correction:
+
+  > “Here’s what I understood:
+  >
+  > 1. This module ingests data from X via Kafka
+  > 2. It processes using Spark
+  > 3. It fails when partition schema mismatches
+  >    Please confirm or correct.”
+
+* Make mind maps or flowcharts from your notes to visualize it.
+
+---
+
+## 📊 8. **Make Your Own KT Dashboard in Notion / Excel / Markdown**
+
+Example structure:
+
+```
+# KT Dashboard
+
+## Module: IngestionPipeline
+- Input: Oracle CDC (via GoldenGate)
+- Transport: Kafka Topic `cdc_user_activity`
+- Transformation: Spark Structured Streaming job
+- Output: Bronze table in Delta Lake
+- Git Repo: `ingestion-pipeline-repo`
+- Trigger: ADF scheduled pipeline
+- Owner: john.doe@company.com
+```
+
+---
+
+## 🎯 9. **Final Tips**
+
+* ✨ **Always end the KT with “What should I explore next?”**
+* 🧠 **Ask to do reverse KT**: "Can I explain what I learned tomorrow and you correct me?"
+* 🔑 **Keep asking "Why is this done this way?"** – this reveals 90% of tribal knowledge
+* 🧩 **Cross-map systems**: See how ingestion, storage, reporting, monitoring are all tied together
+
+---
+
+## 🧭 10. **Ultimate Goal**
+
+When KT ends, you should:
+
+* Know **who owns what**, **where the code lives**, and **how things move**
+* Be able to **draw the flow from source to dashboard**
+* Know **where to look when something breaks**
+* Be ready to take full ownership of at least **one module or task**
+
+---
+
+If you want, I can also:
+
+* ✅ Generate a **custom KT dashboard template** for Notion, Excel, or Markdown
+* ✅ Help you build a **system flowchart** for what you’ve learned so far
+* ✅ Help with **follow-up email drafts** or **access request messages**
+
+Would you like any of these right now?
+
